@@ -1,7 +1,9 @@
+{% load static %}
 <html>
     <head>
+        <link rel='stylesheet' href="{% static 'main/styles.css' %}">
     </head>
-        <body>
+        <body class ="bg-sky-500">
             {%for tovaroved in tovarik%}
             <a href ="{%url 'retail' my_id=tovaroved.id %}">
             Ваш товар: {{tovaroved.nazv}} | <br>Описание товара: {{tovaroved.opis}} | <br>Цена: {{tovaroved.chena}}<br>
