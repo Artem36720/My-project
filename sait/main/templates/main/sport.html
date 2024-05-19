@@ -3,11 +3,16 @@
     <head>
         <link rel='stylesheet' href="{% static 'main/styles.css' %}">
     </head>
-        <body class ="bg-sky-500">
-            {%for tovaroved in tovarik%}
-            <a href ="{%url 'retail' my_id=tovaroved.id %}">
-            Ваш товар: {{tovaroved.nazv}} | <br>Описание товара: {{tovaroved.opis}} | <br>Цена: {{tovaroved.chena}}<br>
+    <body>
+        <nav>
+            <div>
+                <img src="{% static 'images/bol.png' %}">
+            </div>
+        </nav>
+        {% for tovaroved in tovarik %}
+            <a href="{% url 'retail' my_id=tovaroved.id %}">
+                Ваш товар: {{ tovaroved.nazv }} | <br>Описание товара: {{ tovaroved.opis }} | <br>Цена: {{ tovaroved.chena }}<br>
             </a>
-            {%endfor%}
-        </body>
+        {% endfor %}
+    </body>
 </html>
